@@ -15,7 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Entity
 @Table(name = "transaction")
-public class Transaction {
+public class TransactionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,7 +39,7 @@ public class Transaction {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Transaction that = (Transaction) o;
+        TransactionEntity that = (TransactionEntity) o;
         return Objects.equals(transactionId, that.transactionId) &&
                 Objects.equals(currency, that.currency) &&
                 Objects.equals(money, that.money) &&

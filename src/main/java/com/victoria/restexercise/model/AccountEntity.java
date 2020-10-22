@@ -12,7 +12,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "account")
-public class Account {
+public class AccountEntity {
     //@JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +32,7 @@ public class Account {
 
     private boolean treasuryWasSet = false;
 
-    public Account(String name, Currency currency, Money balance, Boolean treasury) {
+    public AccountEntity(String name, Currency currency, Money balance, Boolean treasury) {
         this.name = name;
         this.currency = currency;
         this.balance = balance;
@@ -87,7 +87,7 @@ public class Account {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Account account = (Account) o;
+        AccountEntity account = (AccountEntity) o;
         return treasuryWasSet == account.treasuryWasSet &&
                 Objects.equals(accountId, account.accountId) &&
                 Objects.equals(name, account.name) &&
